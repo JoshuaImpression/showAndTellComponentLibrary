@@ -1,0 +1,64 @@
+@value smUp from '@/styles/breakpoints.module.css';
+
+.block {
+	position: relative;
+	overflow: hidden;
+	padding: 255px 15px 25px;
+
+	&.titleSmall {
+		h1 {
+			font-size: 60px;
+		}
+	}
+
+	h1 {
+		font-size: 80px;
+		line-height: 1;
+
+		.line {
+			overflow: hidden;
+			padding: 0 0 0.1em;
+			margin: 0 0 -0.1em;
+		}
+	}
+
+	.ticker {
+		font-size: inherit;
+		margin: 0;
+	}
+
+	.description {
+		margin-top: 40px;
+		font-size: 10px;
+		line-height: 1.25;
+		text-transform: uppercase;
+		width: 320px;
+		padding-left: 17px;
+		position: relative;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 11px;
+		}
+	}
+
+	@media (smUp) {
+		padding: 250px 20px 40px;
+
+		&.titleSmall {
+			h1 {
+				font-size: 154px;
+			}
+		}
+
+		h1 {
+			font-size: 200px;
+		}
+
+		.description {
+			margin-top: 30px;
+		}
+	}
+}
