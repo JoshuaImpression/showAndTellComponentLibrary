@@ -1,0 +1,175 @@
+@value smUp from '@/styles/breakpoints.module.css';
+
+.block {
+	padding: 100px 0;
+	user-select: none;
+
+	.title {
+		font-size: 82px;
+		margin-bottom: 30px;
+
+		em {
+			margin-top: -3.2em;
+		}
+	}
+
+	.swiper {
+		margin-right: min(560px - 50vw, -20px);
+	}
+
+	.arrows {
+		display: flex;
+		margin-bottom: 26px;
+
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 35px;
+			width: 52px;
+			appearance: none;
+			border: none;
+			outline: none;
+			background: #111114;
+			color: #fff;
+			border-radius: 30px;
+			cursor: pointer;
+
+			svg {
+				width: 17px;
+				height: 17px;
+				fill: currentColor;
+			}
+
+			&.arrowNext {
+				svg {
+					transform: scaleX(-1);
+				}
+			}
+		}
+	}
+
+	.slideItem {
+		display: flex;
+		flex-direction: column;
+		max-width: 280px;
+		height: auto;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #111114;
+			transform-origin: 0 0;
+			scale: 0 1;
+			transition: scale 0ms ease-in-out;
+			transition-delay: 800ms;
+		}
+
+		&:hover {
+			picture img {
+				scale: 1.1;
+				transition-duration: 800ms;
+			}
+		}
+
+		&.slideActive:before {
+			scale: 1 1;
+			transition-duration: 400ms;
+			transition-delay: 0ms;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			background: #fff;
+			padding: 30px 30px 30px;
+			flex-grow: 1;
+		}
+
+		.subTitle {
+			font-size: 8.83px;
+			margin-bottom: 18px;
+			opacity: 0.4;
+		}
+
+		.title {
+			font-size: 15.35px;
+			letter-spacing: -.02em;
+			line-height: 1.3;
+			flex-grow: 1;
+			padding-bottom: 45px;
+			font-weight: 300;
+			margin: 0;
+		}
+
+		.button {
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			justify-content: space-between;
+			font-size: 8.83px;
+
+			&:hover svg {
+				transform: rotate(180deg);
+			}
+
+			svg {
+				display: block;
+				width: 10px;
+				height: 10px;
+				transform: rotate(225deg);
+				transition: transform 400ms ease-in-out;
+			}
+		}
+
+		picture {
+			overflow: hidden;
+
+			img {
+				display: block;
+				aspect-ratio: 385/273;
+				object-fit: cover;
+				transition: scale 400ms ease-in-out;
+			}
+		}
+	}
+
+	@media (smUp) {
+
+		.title {
+			font-size: 230px;
+			margin-bottom: 90px;
+
+			em {
+				margin-top: -10.3em;
+			}
+		}
+
+		.arrows {
+			margin-bottom: 40px;
+			justify-content: flex-end;
+		}
+
+		.slideItem {
+			max-width: 385px;
+
+			.content {
+				background: #fff;
+				padding: 42px 44px;
+			}
+
+			.subTitle,
+			.button {
+				font-size: 12.66px;
+			}
+
+			.title {
+				font-size: 22px;
+			}
+		}
+	}
+}
