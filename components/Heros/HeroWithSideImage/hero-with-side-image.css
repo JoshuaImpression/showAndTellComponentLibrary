@@ -1,0 +1,126 @@
+
+
+.hero-with-side-image {
+	position: relative;
+	overflow: hidden;
+
+	.contentCol {
+		padding: 245px 20px 17px;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		margin-bottom: 18px;
+
+		.ticker {
+			font-size: 60px;
+		}
+	}
+
+	.sub {
+		font-size: 8px;
+		line-height: 1.25;
+		text-transform: uppercase;
+		margin-top: 25px;
+		overflow: hidden;
+		opacity: 0;
+		max-width: 320px;
+
+		div {
+			position: relative;
+			padding-left: 17px;
+			display: flex;
+			gap: 15px;
+		}
+
+		p {
+			min-width: 115px;
+		}
+
+		svg {
+			position: absolute;
+			top: .5em;
+			left: 0;
+			width: 11px;
+			margin-top: -4.5px;
+		}
+	}
+
+	picture {
+		position: relative;
+
+		img {
+			display: block;
+			aspect-ratio: 360/386;
+			object-fit: cover;
+		}
+
+		div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			video {
+				object-fit: cover;
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		display: flex;
+		height: 100vh;
+		padding-top: var(--header-primary-height);
+
+		.contentCol,
+		picture {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+
+		.contentCol {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			padding: 0 20px;
+			min-width: 0;
+			overflow: hidden;
+			padding-bottom: 70px;
+
+			>*:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		h1 {
+			margin: auto 0 auto -20px;
+
+			.ticker {
+				font-size: 172px;
+			}
+		}
+
+		.sub {
+			margin: 0 0 25px;
+			width: auto;
+
+			div {
+				display: flex;
+				gap: 25px;
+			}
+
+			p {
+				max-width: 340px;
+			}
+		}
+
+		picture {
+			img {
+				height: 100%;
+				aspect-ratio: auto;
+				object-fit: cover;
+			}
+		}
+	}
+}
